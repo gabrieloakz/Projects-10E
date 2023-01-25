@@ -1,0 +1,31 @@
+// gabriel ferreira carvalho 10
+
+#include <iostream>
+#include <locale>
+using namespace std;
+
+int ;
+
+int main()
+
+setlocale(LC_ALL, "pt_PT.utf8");
+
+system("pause");
+
+return 0;
+
+int contagem1, contagem2, linhas = 5;
+
+int main(Tralhas)
+{
+    
+
+
+
+
+
+
+
+    return 0;
+}
+
