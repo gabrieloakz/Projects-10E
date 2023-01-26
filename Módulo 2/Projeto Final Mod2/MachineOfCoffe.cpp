@@ -90,6 +90,7 @@ int main()
 
          default:
             cout << "Item inavlido! \n Escolha outro número! \n";
+            valor = 0 ;
             break;
          }
 
