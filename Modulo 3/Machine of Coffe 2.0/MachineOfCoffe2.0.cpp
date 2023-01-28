@@ -52,9 +52,9 @@ void Faturamento()
 void Sair()
 {
 
-    cout << "Tchau Tchau Baby";
+    cout << "\n\nTchau Tchau Baby\n\n";
     system("pause");
-    system("cls")
+    system("cls") ;
 }
 
 void MenuBebidas()
@@ -118,6 +118,7 @@ int main()
 
                 Sair();
                 break;
+            
             default:
                 break;
             }

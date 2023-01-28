@@ -76,7 +76,7 @@ void legendaescolha(int l)
 void ExibirEscolhas(int j, int c)
 {
 
-    cout << "\nJogador ->";
+    cout << "\n\t\t\tJogador ->";
 
     legendaescolha(j);
 
@@ -84,7 +84,7 @@ void ExibirEscolhas(int j, int c)
 
     legendaescolha(c);
 
-    cout << "<- Computador\n";
+    cout << "<- Computador\n\t\t\t";
 }
 
 char VerificarVencedor(int ApostaJ, int ApostaC)
