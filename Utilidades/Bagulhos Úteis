@@ -1,8 +1,8 @@
-// gabriel ferreira carvalho 10
+// gabriel ferreira carvalho 10E
 
 #include <iostream>
 #include <locale>
-using namespace std;
+using namespace std; 
 
 int ;
 
