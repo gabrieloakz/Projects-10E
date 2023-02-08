@@ -9,30 +9,26 @@ int num;
 int somatorio(int num)
 {
 
-int x ;
+    if (num == 1)
 
-if (num == 1)
+        return (1);
 
-    return (1);
-
-
-return num + somatorio(num - 1) ;
-
+    return num + somatorio(num - 1);
 }
 
 int main(int argc, char const *argv[])
 {
 
-int resultado ;
+    int resultado;
 
     setlocale(LC_ALL, "pt_PT.utf8");
 
-    puts("Insira um Número:") ;
+    puts("Insira um Número:");
     cin >> num;
 
-    resultado = somatorio(num) ;
+    resultado = somatorio(num);
 
-    cout << resultado << endl ;
+    cout << resultado << endl;
 
     return 0;
 }
