@@ -82,7 +82,7 @@ void Menu()
     cout << "3 - Descodificar Sequência\n";
     cout << "0 - Sair\n";
     cin >> MenuEscolhido;
-0
+
     system("cls");
 }
 

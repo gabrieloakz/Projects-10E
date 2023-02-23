@@ -16,7 +16,7 @@ int somatorio(int num)
     return num + somatorio(num - 1);
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 
     int resultado;
@@ -32,3 +32,4 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+
