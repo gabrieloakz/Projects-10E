@@ -12,7 +12,7 @@ int main()
 {
     setlocale(LC_ALL, "pt_PT.utf8");
 
-    const int n = 20;
+    const int n = 3;
 
     int valores[n];
 
