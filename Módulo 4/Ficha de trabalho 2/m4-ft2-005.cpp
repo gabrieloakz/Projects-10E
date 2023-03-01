@@ -12,7 +12,7 @@ int main()
 {
     setlocale(LC_ALL, "pt_PT.utf8");
 
-    const int n = 3;
+    const int n = 20;
 
     int valores[n];
 
@@ -28,7 +28,25 @@ int main()
         {
             maiores++;
         }
+
+        if (valores[i] < valores[0])
+        {
+            menores++;
+        }
+
+        if (valores[i] == valores[0])
+        {
+
+            iguais++;
+        }
     }
+
+
+    iguais--;
+
     cout << "Maiores que o primeiro elemnto: " << maiores << "\n";
+    cout << "Menores que o primeiro elemnto: " << menores << "\n";
+    cout << "Iguais que o primeiro elemnto: " << iguais << "\n";
+
     return 0;
 }
