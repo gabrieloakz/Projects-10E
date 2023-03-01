@@ -83,7 +83,7 @@ void Menu()
     cout << "0 - Sair\n";
     cin >> MenuEscolhido;
 
-    system("cls");
+    
 }
 
 int codificacao(int x)
