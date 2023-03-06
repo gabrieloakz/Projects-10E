@@ -19,9 +19,9 @@ int contagem1, contagem2, linhas = 5;
 int main(Tralhas)
 {
     
- 
+ int Vendidos[7] ; //Posteriormente fazere matriz para abranger 3 menus
 
-
+Vendidos[0]++
 
 
 

@@ -72,8 +72,6 @@ int main()
 void Menu()
 {
 
-    int EscolhaMenu;
-
     system("cls");
 
     cout << "PROGRAMA DE CODIFICAÇÃO - CENTRAL SECRET\n";
@@ -83,7 +81,7 @@ void Menu()
     cout << "0 - Sair\n";
     cin >> MenuEscolhido;
 
-    
+    system("cls");
 }
 
 int codificacao(int x)
@@ -120,14 +118,14 @@ void IntroduzirSequencia()
 
 void CodificarSequencia()
 {
-  
+
     valorCodificado1 = codificacao(valorIntoduzido1);
     valorCodificado2 = codificacao(valorIntoduzido2);
     valorCodificado3 = codificacao(valorIntoduzido3);
     valorCodificado4 = codificacao(valorIntoduzido4);
     cout << valorCodificado1 << " - " << valorCodificado2 << " - " << valorCodificado3 << " - " << valorCodificado4 << "\n";
 
-
+    system("pause");
 }
 
 void DescodificarSequencia()
