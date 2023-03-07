@@ -277,7 +277,7 @@ int main()
             }
         }
 
-    } while (escolha != 0);
+    } while (MenuEscolhido != 0);
 
     return 0;
 }
