@@ -37,6 +37,42 @@ void Faturamento()
 {
 
     cout << "\nFaturamento = " << (faturamento / 100) << " Euros\n\n";
+    
+    if (q1 > 0)
+   {
+      cout << q1 << "Café(s) pingado(s) Vendido(s)\n\n";
+   }
+
+   if (q2 > 0)
+   {
+      cout << q2 << "Chá(s) de limão Vendido(s)\n\n";
+   }
+
+   if (q3 > 0)
+   {
+      cout << q3 << "Café(s) longo(s) Vendido(s)\n\n";
+   }
+
+   if (q4 > 0)
+   {
+      cout << q4 << "Café(s) curto(s) Vendido(s)\n\n";
+   }
+
+   if (q5 > 0)
+   {
+      cout << q5 << "Cappuccino(s) Vendido(s)\n\n";
+   }
+
+   if (q6 > 0)
+   {
+      cout << q6 << "Chocolate(s) Vendido(s)\n\n";
+   }
+
+   if (q7 > 0)
+   {
+      cout << q7 << "Galão(ões) Vendido(s)\n\n";
+   }
+    
     system("pause");
     system("cls");
 }
