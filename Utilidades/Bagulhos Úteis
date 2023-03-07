@@ -2,11 +2,11 @@
 
 #include <iostream>
 #include <locale>
-using namespace std; 
+using namespace std;
 
-int ;
+int;
 
-int main()
+main()
 
 setlocale(LC_ALL, "pt_PT.utf8");
 
@@ -16,16 +16,18 @@ return 0;
 
 int contagem1, contagem2, linhas = 5;
 
+// Permite utilizar e modificar cores
+// Digitando color + o número da cor desejada
+// Se desejado color + algo aleatório mostra a tabela
+
+system("color FD");
+
 int main(Tralhas)
 {
-    
- int Vendidos[7] ; //Posteriormente fazere matriz para abranger 3 menus
 
-Vendidos[0]++
+    int Vendidos[7]; // Posteriormente fazere matriz para abranger 3 menus
 
+    Vendidos[0]++
 
-
-
-    return 0;
+        return 0;
 }
-

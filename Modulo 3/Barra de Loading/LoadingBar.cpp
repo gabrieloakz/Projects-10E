@@ -2,20 +2,36 @@
 
 #include <iostream>
 #include <locale>
+#include <chrono>
+#include <thread>
 using namespace std;
-
-int;
 
 int main()
 {
-    setlocale(LC_ALL, "pt_PT.utf8");
+    // setlocale(LC_ALL, "pt_PT.utf8");
 
-    // Permite utilizar e modificar cores
-    // Digitando color + o número da cor desejada
-    // Se desejado color + algo aleatório mostra a tabela
-
-    system("color FD"); 
+    int Barra, i;
     
+    system("color 0c");
+
+    system("cls");
+
+    Barra = 219;
+
+    cout << "\n\n\n\t\t\t\t";
+
+    cout << "\n\n\n\t\t\t\t";
+
+    for (i = 0; i < 32; i++)
+    {
+        cout << char(Barra);
+
+        this_thread::sleep_for(10ms) ;
+    }
+
+    cout << " " << "Tarefa Concluida" << i << "/32\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t" ;
+
+    this_thread::sleep_for(10ms) ;
+
     return 0;
 }
-

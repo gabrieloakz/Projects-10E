@@ -19,9 +19,9 @@ int Escolha, MenuEscolhido;
 
 void Menu_Principal();
 
-void Ler_Elemento_Da_Matriz();
+int Ler_Elemento_Da_Matriz();
 
-// void Substituir_Elemento_Na_Matriz();
+int Substituir_Elemento_Na_Matriz();
 
 // void Limpar_Matriz();
 
@@ -44,8 +44,9 @@ int main()
 
     setlocale(LC_ALL, "pt_PT.utf8");
 
-    do
+    system("color 0e");
 
+    do
     {
 
         Menu_Principal();
@@ -62,7 +63,7 @@ int main()
 
             case 2:
 
-                // Substituir_Elemento_Na_Matriz();
+                Substituir_Elemento_Na_Matriz();
                 break;
 
             case 3:
@@ -108,7 +109,7 @@ void Menu_Principal()
 {
 
     system("cls");
-    
+
     puts("\t");
     puts("\t1 - Ler Elemento Da Matriz");
     puts("\t2 - Substituir Elemento Na Matriz");
@@ -120,35 +121,85 @@ void Menu_Principal()
     puts("\t8 - Calcular Media ");
     puts("\t9 - Faturamento");
     puts("\t0 - Sair");
-    
-    cout << "\n\n\tInsira a sua opção:" ;
+
+    cout << "\n\n\tInsira a sua opção: ";
 
     cin >> MenuEscolhido;
 }
 
-void Ler_Elemento_Da_Matriz()
+int Ler_Elemento_Da_Matriz()
 {
 
-int LinhaD , ColunaD ;
-int i , j ;
+    int i, j;
 
-// Lembrete: Do while pra limitar o ususario ao inserir as linhas e colunas
+    do
+    {
+        system("cls");
 
-system("cls");
+        puts("\t");
 
-puts("\t");
+        puts("\tLENDO A MATRIZ...");
 
-cout << "\tLinhas:" << N_LINHAS << "\tColunas:" << N_COLUNAS << "\n\n";
+        cout << "\n\tLinhas:" << N_LINHAS << "\tColunas:" << N_COLUNAS << "\n\n";
 
-cout << "\tInsira a linha desejada:" ;
-cin >> LinhaD ;
-cout << "\tInsira a Coluna desejada:" ;
-cin >> ColunaD ;
+        cout << "\tInsira a linha desejada: ";
+        cin >> i;
 
-cout << "\tValor nestas cordenadas:" << Notas[LinhaD][ColunaD] << "\n\n" ;
+        puts("\t");
 
-system("pause");
+        cout << "\tInsira a Coluna desejada: ";
+        cin >> j;
 
-// return j ;
+        puts("\t");
 
+        cout << "\tValor nestas cordenadas: " << Notas[i][j] << "\n\n\t";
+
+        cout << "Para voltar ao menu digite qualquer tecla!" << "\n\n\t";
+
+        system("pause");
+
+        return Notas[i][j];
+
+    } while (i > 0 || i < 5 || j > 0 || j << 3);
+}
+
+int Substituir_Elemento_Na_Matriz()
+{
+
+    int Valor, i, j;
+
+    do
+    {
+        system("cls");
+
+        puts("\t");
+
+        puts("\tSUBSTITUIÇÃO DA MATRIZ...");
+
+        cout << "\n\tLinhas:" << N_LINHAS << "\tColunas:" << N_COLUNAS << "\n\n";
+
+        cout << "\tInsira a linha desejada: ";
+        cin >> i;
+
+        puts("\t");
+
+        cout << "\tInsira a coluna desejada: ";
+        cin >> j;
+
+        puts("\t");
+
+        puts("Insira o valor desejado: ") ;
+        cin >> Valor ;
+        
+        Notas[i][j] = Valor ;  
+
+        cout << "Novo Valor: " << Valor << "\n\n\t";
+
+        cout << "Para voltar ao menu digite qualquer tecla!" << "\n\n\t";
+
+        system("pause");
+
+        return Notas[i][j];
+
+    } while (i > 0 || i < 5 || j > 0 || j << 3);
 }
