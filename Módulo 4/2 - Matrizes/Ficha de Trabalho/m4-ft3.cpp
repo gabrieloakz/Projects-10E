@@ -23,11 +23,11 @@ int Ler_Elemento_Da_Matriz();
 
 int Substituir_Elemento_Na_Matriz();
 
-void Limpar_Matriz();
+int Limpar_Matriz();
 
 void Mostrar_Os_Elementos_Da_Matriz();
 
-// void Pesquisar_valor();
+int Pesquisar_valor();
 
 // void Procurar_Maximo();
 
@@ -77,7 +77,7 @@ int main()
 
             case 5:
 
-                // Pesquisar_valor();
+                Pesquisar_valor();
                 break;
 
             case 6:
@@ -208,7 +208,7 @@ int Substituir_Elemento_Na_Matriz()
     } while (i > 0 || i < 5 || j > 0 || j << 3);
 }
 
-void Limpar_Matriz()
+int Limpar_Matriz()
 {
 
     int i, j;
@@ -244,6 +244,8 @@ void Limpar_Matriz()
     cout << "\n\n\t";
 
     system("pause");
+
+    return Notas[i][j];
 }
 
 void Mostrar_Os_Elementos_Da_Matriz()
@@ -267,8 +269,53 @@ void Mostrar_Os_Elementos_Da_Matriz()
 
         cout << "\n\n";
     }
-    
+
     cout << "\t";
-        
+
+    system("pause");
+}
+
+int Pesquisar_valor()
+{
+    // Crie uma função que receba um valor lido a partir do teclado e que devolva true ou false,
+    // conforme esse valor esteja ou não na matriz, respetivamente.
+
+    int ValorPesquisado, i = 0, j = 0;
+
+    system("cls");
+
+    puts("\t");
+
+    puts("\tPESQUISA NA MATRIZ...");
+
+    puts("\t");
+
+    cout << "\n\n\tValor que procuras: ";
+    cin >> ValorPesquisado;
+
+    for (i = 0; i < N_LINHAS; i++)
+    {
+        for (j = 0; j < N_COLUNAS; j++)
+        {
+
+            cin >> Notas[i][j];
+        }
+
+    if (ValorPesquisado = Notas[i][j])
+        {
+            puts("\tSim! Este valor está presenete na matriz!");
+
+            return true;
+        }
+
+    else
+        {
+
+            puts("\tNão! Este valor não está presenete na matriz!");
+
+            return false;
+        }
+    }
+
     system("pause");
 }
