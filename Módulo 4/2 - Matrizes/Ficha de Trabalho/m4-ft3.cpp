@@ -23,9 +23,9 @@ int Ler_Elemento_Da_Matriz();
 
 int Substituir_Elemento_Na_Matriz();
 
-// void Limpar_Matriz();
+void Limpar_Matriz();
 
-// void Mostrar_Os_Elementos_Da_Matriz();
+void Mostrar_Os_Elementos_Da_Matriz();
 
 // void Pesquisar_valor();
 
@@ -68,11 +68,11 @@ int main()
 
             case 3:
 
-                // Limpar_Matriz();
+                Limpar_Matriz();
                 break;
 
             case 4:
-                // Mostrar_Os_Elementos_Da_Matriz();
+                Mostrar_Os_Elementos_Da_Matriz();
                 break;
 
             case 5:
@@ -154,7 +154,8 @@ int Ler_Elemento_Da_Matriz()
 
         cout << "\tValor nestas cordenadas: " << Notas[i][j] << "\n\n\t";
 
-        cout << "Para voltar ao menu digite qualquer tecla!" << "\n\n\t";
+        cout << "Para voltar ao menu digite qualquer tecla!"
+             << "\n\n\t";
 
         system("pause");
 
@@ -188,18 +189,86 @@ int Substituir_Elemento_Na_Matriz()
 
         puts("\t");
 
-        puts("Insira o valor desejado: ") ;
-        cin >> Valor ;
-        
-        Notas[i][j] = Valor ;  
+        cout << "\tInsira o valor desejado: ";
+        cin >> Valor;
 
-        cout << "Novo Valor: " << Valor << "\n\n\t";
+        Notas[i][j] = Valor;
 
-        cout << "Para voltar ao menu digite qualquer tecla!" << "\n\n\t";
+        puts("\t");
+
+        cout << "\tNovo Valor: " << Valor << "\n\n\t";
+
+        cout << "Para voltar ao menu digite qualquer tecla!"
+             << "\n\n\t";
 
         system("pause");
 
         return Notas[i][j];
 
     } while (i > 0 || i < 5 || j > 0 || j << 3);
+}
+
+void Limpar_Matriz()
+{
+
+    int i, j;
+
+    system("cls");
+
+    puts("\t");
+
+    puts("\tLIMPANDO A MATRIZ...");
+
+    for (i = 0; i < N_LINHAS; i++)
+    {
+        for (j = 0; j < N_COLUNAS; j++)
+        {
+
+            Notas[i][j] = 0;
+        }
+    }
+
+    puts("\n\tMatriz Limpa:");
+
+    for (int i = 0; i < N_LINHAS; i++)
+    {
+        cout << "\n";
+
+        for (int j = 0; j < N_COLUNAS; j++)
+        {
+            cout << "\t";
+            cout << Notas[i][j] << " ";
+        }
+    }
+
+    cout << "\n\n\t";
+
+    system("pause");
+}
+
+void Mostrar_Os_Elementos_Da_Matriz()
+{
+
+    system("cls");
+
+    puts("\t");
+
+    puts("\tELEMENTOS DA MATRIZ...");
+
+    puts("\t");
+
+    for (int i = 0; i < N_LINHAS; i++)
+    {
+        for (int j = 0; j < N_COLUNAS; j++)
+        {
+
+            cout << "\tNotas[" << i << "][" << j << "]: " << Notas[i][j];
+        }
+
+        cout << "\n\n";
+    }
+    
+    cout << "\t";
+        
+    system("pause");
 }
