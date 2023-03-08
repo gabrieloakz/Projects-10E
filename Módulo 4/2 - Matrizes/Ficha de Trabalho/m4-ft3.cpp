@@ -19,17 +19,19 @@ int Escolha, MenuEscolhido;
 
 void Menu_Principal();
 
+void EscolhaMenu();
+
 int Ler_Elemento_Da_Matriz();
 
-int Substituir_Elemento_Na_Matriz();
+void Substituir_Elemento_Na_Matriz();
 
-int Limpar_Matriz();
+void Limpar_Matriz();
 
 void Mostrar_Os_Elementos_Da_Matriz();
 
-int Pesquisar_valor();
+bool Pesquisar_valor();
 
-// void Procurar_Maximo();
+int Procurar_Maximo();
 
 // void Mostrar_Os_Indices_Do_Menor_Valor();
 
@@ -46,61 +48,9 @@ int main()
 
     system("color 0e");
 
-    do
-    {
+    // Menu_Principal();
 
-        Menu_Principal();
-
-        if (MenuEscolhido != 0)
-        {
-
-            switch (MenuEscolhido)
-            {
-            case 1:
-
-                Ler_Elemento_Da_Matriz();
-                break;
-
-            case 2:
-
-                Substituir_Elemento_Na_Matriz();
-                break;
-
-            case 3:
-
-                Limpar_Matriz();
-                break;
-
-            case 4:
-                Mostrar_Os_Elementos_Da_Matriz();
-                break;
-
-            case 5:
-
-                Pesquisar_valor();
-                break;
-
-            case 6:
-
-                // Procurar_Maximo();
-                break;
-
-            case 7:
-
-                // Mostrar_Os_Indices_Do_Menor_Valor();
-                break;
-
-            case 8:
-
-                // Calcular_Media();
-                break;
-
-            default:
-                break;
-            }
-        }
-
-    } while (MenuEscolhido != 0);
+    EscolhaMenu();
 
     return 0;
 }
@@ -125,6 +75,94 @@ void Menu_Principal()
     cout << "\n\n\tInsira a sua opção: ";
 
     cin >> MenuEscolhido;
+}
+
+void EscolhaMenu()
+{
+
+    int Valor;
+
+    do
+    {
+
+        Menu_Principal();
+
+        if (MenuEscolhido != 0)
+        {
+
+            switch (MenuEscolhido)
+            {
+            case 1:
+
+                Valor = Ler_Elemento_Da_Matriz();
+
+                cout << "\tValor nestas cordenadas: " << Valor << "\n\n\t";
+
+                cout << "Para voltar ao menu digite qualquer tecla!"
+                     << "\n\n\t";
+
+                system("pause");
+                break;
+
+            case 2:
+
+                Substituir_Elemento_Na_Matriz();
+                system("pause");
+                break;
+
+            case 3:
+
+                Limpar_Matriz();
+                break;
+
+            case 4:
+                Mostrar_Os_Elementos_Da_Matriz();
+                break;
+
+            case 5:
+
+                if (Pesquisar_valor())
+                {
+                    puts("\t");
+                    puts("\tSim! Este valor está presenete na matriz!");
+                }
+                else
+                {
+                    puts("\t");
+                    puts("\tNão! Este valor não está presenete na matriz!");
+                }
+
+                cout << "Para voltar ao menu digite qualquer tecla!"
+                     << "\n\n\t";
+
+                system("pause");
+
+                break;
+
+            case 6:
+
+                Valor = Procurar_Maximo();
+
+                cout << "\tO maior valor é: " << Valor << "\n\n\t";
+
+                break;
+
+            case 7:
+
+                // Mostrar_Os_Indices_Do_Menor_Valor();
+                break;
+
+            case 8:
+
+                // Calcular_Media();
+                break;
+
+            default:
+                break;
+            }
+        }
+
+    } while (MenuEscolhido != 0);
 }
 
 int Ler_Elemento_Da_Matriz()
@@ -152,63 +190,55 @@ int Ler_Elemento_Da_Matriz()
 
         puts("\t");
 
-        cout << "\tValor nestas cordenadas: " << Notas[i][j] << "\n\n\t";
-
-        cout << "Para voltar ao menu digite qualquer tecla!"
-             << "\n\n\t";
-
-        system("pause");
-
         return Notas[i][j];
 
-    } while (i > 0 || i < 5 || j > 0 || j << 3);
+    } while (i < 0 || i > N_LINHAS - 1 || j < 0 || j > N_COLUNAS - 1);
 }
 
-int Substituir_Elemento_Na_Matriz()
+void Substituir_Elemento_Na_Matriz()
 {
 
     int Valor, i, j;
 
+    system("cls");
+
+    puts("\t");
+
+    puts("\tSUBSTITUIÇÃO DA MATRIZ...");
+
+    cout << "\n\tLinhas:" << N_LINHAS << "\tColunas:" << N_COLUNAS << "\n\n";
+
     do
     {
-        system("cls");
-
-        puts("\t");
-
-        puts("\tSUBSTITUIÇÃO DA MATRIZ...");
-
-        cout << "\n\tLinhas:" << N_LINHAS << "\tColunas:" << N_COLUNAS << "\n\n";
-
         cout << "\tInsira a linha desejada: ";
         cin >> i;
+    
+    } while (i < 0 || i > N_LINHAS - 1);
 
-        puts("\t");
-
+    puts("\t");
+    do
+    {
         cout << "\tInsira a coluna desejada: ";
         cin >> j;
+    
+    } while (j < 0 || j > N_COLUNAS - 1);
 
-        puts("\t");
+    puts("\t");
 
-        cout << "\tInsira o valor desejado: ";
-        cin >> Valor;
+    cout << "\tInsira o valor desejado: ";
+    cin >> Valor;
 
-        Notas[i][j] = Valor;
+    Notas[i][j] = Valor;
 
-        puts("\t");
+    puts("\t");
 
-        cout << "\tNovo Valor: " << Valor << "\n\n\t";
+    cout << "\tNovo Valor: " << Valor << "\n\n\t";
 
-        cout << "Para voltar ao menu digite qualquer tecla!"
-             << "\n\n\t";
-
-        system("pause");
-
-        return Notas[i][j];
-
-    } while (i > 0 || i < 5 || j > 0 || j << 3);
+    cout << "Para voltar ao menu digite qualquer tecla!"
+         << "\n\n\t";
 }
 
-int Limpar_Matriz()
+void Limpar_Matriz()
 {
 
     int i, j;
@@ -243,9 +273,10 @@ int Limpar_Matriz()
 
     cout << "\n\n\t";
 
-    system("pause");
+    cout << "Para voltar ao menu digite qualquer tecla!"
+         << "\n\n\t";
 
-    return Notas[i][j];
+    system("pause");
 }
 
 void Mostrar_Os_Elementos_Da_Matriz()
@@ -275,7 +306,7 @@ void Mostrar_Os_Elementos_Da_Matriz()
     system("pause");
 }
 
-int Pesquisar_valor()
+bool Pesquisar_valor()
 {
     // Crie uma função que receba um valor lido a partir do teclado e que devolva true ou false,
     // conforme esse valor esteja ou não na matriz, respetivamente.
@@ -298,24 +329,44 @@ int Pesquisar_valor()
         for (j = 0; j < N_COLUNAS; j++)
         {
 
-            cin >> Notas[i][j];
-        }
+            if (ValorPesquisado == Notas[i][j])
+            {
 
-    if (ValorPesquisado = Notas[i][j])
-        {
-            puts("\tSim! Este valor está presenete na matriz!");
-
-            return true;
-        }
-
-    else
-        {
-
-            puts("\tNão! Este valor não está presenete na matriz!");
-
-            return false;
+                return true;
+            }
         }
     }
 
-    system("pause");
+    return false;
 }
+
+int Procurar_Maximo()
+{
+
+    int maiornum = Notas[0][0];
+
+    system("cls");
+
+    puts("\t");
+
+    puts("\tMAIOR VALOR NA MATRIZ...");
+
+    puts("\t");
+
+    for (int i = 0; i < N_LINHAS; i++)
+    {
+        for (int j = 0; j < N_COLUNAS; j++)
+        {
+            if (Notas[i][j] > maiornum)
+            {
+                maiornum = Notas[i][j];
+            }
+        }
+    }
+
+    return maiornum;
+
+    puts("\t");
+}
+
+// void Mostrar_Os_Indices_Do_Menor_Valor();
