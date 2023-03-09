@@ -33,11 +33,11 @@ bool Pesquisar_valor();
 
 int Procurar_Maximo();
 
-// void Mostrar_Os_Indices_Do_Menor_Valor();
+void Mostrar_Os_Indices_Do_Menor_Valor();
 
-// void Calcular_Media();
+float Calcular_Media();
 
-// void Sair();
+void Sair();
 
 // Função Principal
 
@@ -47,8 +47,6 @@ int main()
     setlocale(LC_ALL, "pt_PT.utf8");
 
     system("color 0e");
-
-    // Menu_Principal();
 
     EscolhaMenu();
 
@@ -69,7 +67,6 @@ void Menu_Principal()
     puts("\t6 - Procurar Maximo");
     puts("\t7 - Mostrar Os Indices Do Menor Valor");
     puts("\t8 - Calcular Media ");
-    puts("\t9 - Faturamento");
     puts("\t0 - Sair");
 
     cout << "\n\n\tInsira a sua opção: ";
@@ -81,6 +78,7 @@ void EscolhaMenu()
 {
 
     int Valor;
+    float Media = 0;
 
     do
     {
@@ -125,14 +123,16 @@ void EscolhaMenu()
                 {
                     puts("\t");
                     puts("\tSim! Este valor está presenete na matriz!");
+                    puts("\t");
                 }
                 else
                 {
                     puts("\t");
                     puts("\tNão! Este valor não está presenete na matriz!");
+                    puts("\t");
                 }
 
-                cout << "Para voltar ao menu digite qualquer tecla!"
+                cout << "\tPara voltar ao menu digite qualquer tecla!"
                      << "\n\n\t";
 
                 system("pause");
@@ -145,24 +145,42 @@ void EscolhaMenu()
 
                 cout << "\tO maior valor é: " << Valor << "\n\n\t";
 
+                cout << "Para voltar ao menu digite qualquer tecla!"
+                     << "\n\n\t";
+
+                system("pause");
+
                 break;
 
             case 7:
 
-                // Mostrar_Os_Indices_Do_Menor_Valor();
+                Mostrar_Os_Indices_Do_Menor_Valor();
                 break;
 
             case 8:
 
-                // Calcular_Media();
+                Media = Calcular_Media();
+
+                cout << "\tMédia:" << Media;
+
+                cout << "\n\n\tPara voltar ao menu digite qualquer tecla!"
+                     << "\n\n\t";
+
+                system("pause");
                 break;
 
             default:
+                puts("\t");
+                puts("\tEscolha inválida, tente novamente");
+                cout << "\n\n\t";
+                system("pause");
                 break;
             }
         }
 
     } while (MenuEscolhido != 0);
+
+    Sair();
 }
 
 int Ler_Elemento_Da_Matriz()
@@ -212,7 +230,7 @@ void Substituir_Elemento_Na_Matriz()
     {
         cout << "\tInsira a linha desejada: ";
         cin >> i;
-    
+
     } while (i < 0 || i > N_LINHAS - 1);
 
     puts("\t");
@@ -220,7 +238,7 @@ void Substituir_Elemento_Na_Matriz()
     {
         cout << "\tInsira a coluna desejada: ";
         cin >> j;
-    
+
     } while (j < 0 || j > N_COLUNAS - 1);
 
     puts("\t");
@@ -369,4 +387,78 @@ int Procurar_Maximo()
     puts("\t");
 }
 
-// void Mostrar_Os_Indices_Do_Menor_Valor();
+void Mostrar_Os_Indices_Do_Menor_Valor()
+{
+
+    int menornum = Notas[0][0];
+
+    int linha, coluna;
+
+    system("cls");
+
+    puts("\t");
+
+    puts("\tMENOR  VALOR NA MATRIZ...");
+
+    puts("\t");
+
+    for (int i = 0; i < N_LINHAS; i++)
+    {
+        for (int j = 0; j < N_COLUNAS; j++)
+        {
+            if (Notas[i][j] < menornum)
+            {
+                menornum = Notas[i][j];
+                coluna = j;
+                linha = i;
+            }
+        }
+    }
+
+    puts("\t");
+
+    cout << "\tÍndice[" << linha << "][" << coluna << "]: " << menornum;
+
+    cout << "\n\n\tPara voltar ao menu digite qualquer tecla!"
+         << "\n\n\t";
+
+    system("pause");
+}
+
+float Calcular_Media()
+{
+
+    float Soma = 0, Media;
+
+    system("cls");
+
+    puts("\t");
+
+    puts("\tMÉDIA DA MATRIZ...");
+
+    puts("\t");
+
+    for (int i = 0; i < N_LINHAS; i++)
+    {
+        for (int j = 0; j < N_COLUNAS; j++)
+        {
+
+            Soma = Soma + Notas[i][j];
+        }
+    }
+
+    puts("\t");
+
+    Media = Soma / (N_LINHAS * N_COLUNAS);
+
+    return Media;
+}
+
+void Sair()
+{
+
+    system("cls");
+
+    cout << "\n\n\tPressione qualquer tecla para sair do progama!"
+         << "\n\n\t";
+}
