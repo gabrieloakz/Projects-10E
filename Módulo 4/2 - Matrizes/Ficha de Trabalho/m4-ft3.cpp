@@ -285,7 +285,7 @@ int Pesquisar_valor()
     system("cls");
 
     puts("\t");
-
+    
     puts("\tPESQUISA NA MATRIZ...");
 
     puts("\t");
