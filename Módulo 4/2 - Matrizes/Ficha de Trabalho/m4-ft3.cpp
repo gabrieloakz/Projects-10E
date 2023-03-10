@@ -234,6 +234,7 @@ void Substituir_Elemento_Na_Matriz()
     } while (i < 0 || i > N_LINHAS - 1);
 
     puts("\t");
+    
     do
     {
         cout << "\tInsira a coluna desejada: ";
